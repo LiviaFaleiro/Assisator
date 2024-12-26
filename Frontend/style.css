@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a2f1a, #0a3d0a);
+    color: #e0ffe0;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 900px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,127,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+.cartao-citacao {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    padding: 3rem;
+    margin: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 255, 127, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cartao-citacao:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(0, 255, 127, 0.2);
+}
+
+.texto-citacao {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.autor {
+    font-size: 1.3rem;
+    color: #90EE90;
+    font-weight: 600;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+}
+.fonte{
+    font-size: 1.3rem;
+    color: #00bc00;
+    font-weight: 600;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+}
+
+button {
+    background: linear-gradient(45deg, #005200, #003700);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+}
+
+button:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+    background: linear-gradient(45deg, #00cc00, #00ff00);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.carregando {
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .texto-citacao {
+        font-size: 1.5rem;
+    }
+    
+    .autor {
+        font-size: 1.1rem;
+    }
+    
+    .cartao-citacao {
+        padding: 2rem;
+        margin: 1rem;
+    }
+}
